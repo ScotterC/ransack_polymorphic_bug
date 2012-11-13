@@ -1,0 +1,25 @@
+<h1>Listing data_errors</h1>
+
+<table>
+  <tr>
+    <th>Errorable Id</th>
+    <th>Errorable Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data_errors.each do |data_error| %>
+  <tr>
+    <td><%= data_error.errorable_id %></td>
+    <td><%= data_error.errorable_type %></td>
+    <td><%= link_to 'Show', data_error %></td>
+    <td><%= link_to 'Edit', edit_data_error_path(data_error) %></td>
+    <td><%= link_to 'Destroy', data_error, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Data error', new_data_error_path %>

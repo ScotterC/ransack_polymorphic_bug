@@ -1,0 +1,21 @@
+<%= form_for(@data_error) do |f| %>
+  <% if @data_error.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@data_error.errors.count, "error") %> prohibited this data_error from being saved:</h2>
+
+      <ul>
+      <% @data_error.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :errorable %><br />
+    <%= f.text_field :errorable %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
